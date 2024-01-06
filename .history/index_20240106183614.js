@@ -25,14 +25,12 @@ function getRandomStyles() {
 }
 
 function createBalloons(num) {
- 
-    for (var i = num; i > 0; i--) {
-      var balloon = document.createElement("div");
-      balloon.className = "balloon";
-      balloon.style.cssText = getRandomStyles();
-      balloonContainer.append(balloon);
-    }
-  
+  for (var i = num; i > 0; i--) {
+    var balloon = document.createElement("div");
+    balloon.className = "balloon";
+    balloon.style.cssText = getRandomStyles();
+    balloonContainer.append(balloon);
+  }
 }
 
 function removeBalloons() {
@@ -45,6 +43,9 @@ function removeBalloons() {
 // Card hoat dong
 function ActiveCard() {
   cardActive.classList.toggle("active");
+  // if (cardActive.classList.contains("active")) {
+
+  // }
 }
 
 function reveal() {
@@ -69,7 +70,7 @@ window.onload = function () {
       box.removeEventListener("click", openBox, false);
     }
     if (step === 2) {
-      createBalloons(25);
+      createBalloons(10);
       console.log("balloon");
     }
     stepClass(step);
@@ -79,7 +80,7 @@ window.onload = function () {
     }
     if (step === 4) {
       reveal();
-  
+      removeBalloons();
       return true;
     }
     setTimeout(openBox, stepMinutes[step - 1]);

@@ -17,7 +17,6 @@
   -webkit-perspective: 1200px;
   perspective: 1200px;
   transition: 1s;
-  z-index: 5;
 }
 
 .outside,
@@ -201,7 +200,7 @@
 }
 
 .card.click {
-  animation: go 1.5s ease-in;
+  animation: go 3.5s ease-in;
 }
 
 @keyframes go {

@@ -25,14 +25,12 @@ function getRandomStyles() {
 }
 
 function createBalloons(num) {
- 
-    for (var i = num; i > 0; i--) {
-      var balloon = document.createElement("div");
-      balloon.className = "balloon";
-      balloon.style.cssText = getRandomStyles();
-      balloonContainer.append(balloon);
-    }
-  
+  for (var i = num; i > 0; i--) {
+    var balloon = document.createElement("div");
+    balloon.className = "balloon";
+    balloon.style.cssText = getRandomStyles();
+    balloonContainer.append(balloon);
+  }
 }
 
 function removeBalloons() {
@@ -42,21 +40,24 @@ function removeBalloons() {
   }, 2);
 }
 
-// Card hoat dong
+// Card hoat dong 
 function ActiveCard() {
   cardActive.classList.toggle("active");
+  // if (cardActive.classList.contains("active")) {
+    
+  // }
 }
 
 function reveal() {
   console.log("hello");
 }
 
-// Mo hop qua
+// Mo hop qua 
 window.onload = function () {
   var merrywrap = document.getElementById("merrywrap");
   var box = merrywrap.getElementsByClassName("giftbox")[0];
   var step = 1;
-  var stepMinutes = [2000, 2000, 1000, 1000];
+  var stepMinutes = [2000, 2000, 1000, 1000, 1000, 1000];
   function init() {
     box.addEventListener("click", openBox, false);
   }
@@ -69,7 +70,7 @@ window.onload = function () {
       box.removeEventListener("click", openBox, false);
     }
     if (step === 2) {
-      createBalloons(25);
+      createBalloons(10);
       console.log("balloon");
     }
     stepClass(step);
@@ -77,9 +78,9 @@ window.onload = function () {
       cardActive.classList.remove("small");
       cardActive.classList.toggle("click");
     }
-    if (step === 4) {
+    if (step === 6) {
       reveal();
-  
+      removeBalloons();
       return true;
     }
     setTimeout(openBox, stepMinutes[step - 1]);

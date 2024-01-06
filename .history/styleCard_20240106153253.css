@@ -5,6 +5,10 @@
   font-family: "Poppins", sans-serif;
 }
 
+body {
+  background-color: #fdbf00;
+}
+
 .card {
   width: 640px;
   height: 400px;
@@ -17,7 +21,6 @@
   -webkit-perspective: 1200px;
   perspective: 1200px;
   transition: 1s;
-  z-index: 5;
 }
 
 .outside,
@@ -196,9 +199,9 @@
   display: none;
 }
 
-.card.click {
-  animation: spinner 1s infinite alternate;
-}
+/* .card.click {
+  animation: spinner 20s infinite linear;
+} */
 
 .card.click {
   animation: go 1.5s ease-in;
@@ -206,7 +209,7 @@
 
 @keyframes go {
   from {
-    transform: rotate(30deg) translate(-80px, 100px) scale(0.3);
+    transform: translate(-80px, 100px) scale(0.3);
   }
 
   to {
@@ -214,12 +217,8 @@
   }
 }
 
-@keyframes spinner {
-  from{
-    transform: rotate(-5deg);
-  }
-  to {
-    transform: rotate(5deg);
+@keyframes spinner{
+  to{
+    transform: rotate(360deg);
   }
 }
-

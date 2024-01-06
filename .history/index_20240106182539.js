@@ -3,7 +3,6 @@ const balloonContainer = document.getElementById("balloon-container");
 var cardActive = document.querySelector(".card");
 var giftbox = document.querySelector("giftbox");
 
-// Tao balloon
 function random(num) {
   return Math.floor(Math.random() * num);
 }
@@ -25,14 +24,12 @@ function getRandomStyles() {
 }
 
 function createBalloons(num) {
- 
-    for (var i = num; i > 0; i--) {
-      var balloon = document.createElement("div");
-      balloon.className = "balloon";
-      balloon.style.cssText = getRandomStyles();
-      balloonContainer.append(balloon);
-    }
-  
+  for (var i = num; i > 0; i--) {
+    var balloon = document.createElement("div");
+    balloon.className = "balloon";
+    balloon.style.cssText = getRandomStyles();
+    balloonContainer.append(balloon);
+  }
 }
 
 function removeBalloons() {
@@ -42,16 +39,19 @@ function removeBalloons() {
   }, 2);
 }
 
-// Card hoat dong
+// Card hoat dong 
 function ActiveCard() {
   cardActive.classList.toggle("active");
+  if (cardActive.classList.contains("active")) {
+    removeBalloons();
+  }
 }
 
 function reveal() {
   console.log("hello");
 }
-
-// Mo hop qua
+var cardActive = document.querySelector(".card");
+var giftbox = document.querySelector("giftbox");
 window.onload = function () {
   var merrywrap = document.getElementById("merrywrap");
   var box = merrywrap.getElementsByClassName("giftbox")[0];
@@ -69,7 +69,7 @@ window.onload = function () {
       box.removeEventListener("click", openBox, false);
     }
     if (step === 2) {
-      createBalloons(25);
+      createBalloons(10);
       console.log("balloon");
     }
     stepClass(step);
@@ -79,7 +79,6 @@ window.onload = function () {
     }
     if (step === 4) {
       reveal();
-  
       return true;
     }
     setTimeout(openBox, stepMinutes[step - 1]);

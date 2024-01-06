@@ -5,6 +5,10 @@
   font-family: "Poppins", sans-serif;
 }
 
+body {
+  background-color: #fdbf00;
+}
+
 .card {
   width: 640px;
   height: 400px;
@@ -17,7 +21,6 @@
   -webkit-perspective: 1200px;
   perspective: 1200px;
   transition: 1s;
-  z-index: 5;
 }
 
 .outside,
@@ -222,4 +225,3 @@
     transform: rotate(5deg);
   }
 }
-

@@ -69,7 +69,7 @@ window.onload = function () {
       box.removeEventListener("click", openBox, false);
     }
     if (step === 2) {
-      createBalloons(25);
+      createBalloons(10);
       console.log("balloon");
     }
     stepClass(step);
